@@ -4,7 +4,7 @@
 # Lab 08
 # Lab Section: 12
 # Sources, people worked with, help given to:
-# 
+# https://inspector.dev/how-to-round-numbers-in-python-fast-tips/#:~:text=The%20simplest%20way%20to%20round,rounded%20to%20the%20nearest%20integer. 
 
 # Write a function that will properly check strings to see if they are an int or float, and convert them if so
 # If they can't be converted return false
@@ -20,7 +20,7 @@ def check_string(string):
 
     try:
         if str(float(string)) == string:
-            return float(string)
+            return round(float(string), 1)
     except ValueError:
         return False
 
@@ -70,8 +70,8 @@ while True:
     user_input = user_input.strip(" ")
     user_input = user_input.split(",")
     try:
-        m = float(user_input[0])
-        b = float(user_input[1])
+        m = round(float(user_input[0]), 1)
+        b = round(float(user_input[1]), 1)
         L = int(user_input[2])
         H = int(user_input[3])
         result = slope_intercept(m, b, L, H)  
